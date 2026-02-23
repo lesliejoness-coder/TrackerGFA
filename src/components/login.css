@@ -1,0 +1,113 @@
+/* login.css - Optimized with CSS Variables */
+
+:root {
+  --login-bg-color: #f5f5f5;
+  --login-form-bg: #fff;
+  --login-primary-color: #4caf50;
+  --login-primary-hover: #45a049;
+  --login-text-color: #333;
+  --login-label-color: #555;
+  --login-border-color: #ccc;
+  --login-accent-color: #007bff;
+  --login-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--login-bg-color);
+}
+
+.login-form {
+  background-color: var(--login-form-bg);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: var(--login-shadow);
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--login-text-color);
+}
+
+.login-form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--login-label-color);
+}
+
+.login-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--login-border-color);
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--login-accent-color);
+}
+
+.password-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password {
+  margin-left: 10px;
+  padding: 8px;
+  background: none;
+  border: none;
+  color: var(--login-accent-color);
+  cursor: pointer;
+  font-size: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-password:hover {
+  opacity: 0.8;
+}
+
+.login-button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: var(--login-primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--login-primary-hover);
+}
+
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .login-form {
+    padding: 20px;
+    margin: 10px;
+  }
+}
