@@ -56,11 +56,11 @@ const CLIENTS_DATA = [
 
 // Données des agences actives
 const AGENCES_ACTIVES_DATA = [
-  { id: 1, nom: 'Agence Paris Centre', adresse: '15 rue de Rivoli, Paris', responsable: 'Alice Moreau', tel: '01 23 45 67 89', agences: 8 },
-  { id: 2, nom: 'Agence Lyon Part-Dieu', adresse: '45 cours Lafayette, Lyon', responsable: 'Bernard Blanc', tel: '04 78 90 12 34', agences: 5 },
-  { id: 3, nom: 'Agence Marseille Vieux-Port', adresse: '12 quai du Port, Marseille', responsable: 'Catherine Roux', tel: '04 91 23 45 67', agences: 6 },
-  { id: 4, nom: 'Agence Bordeaux Centre', adresse: '8 rue Sainte-Catherine, Bordeaux', responsable: 'David Lopez', tel: '05 56 78 90 12', agences: 4 },
-  { id: 5, nom: 'Agence Lille Grand Palais', adresse: '25 boulevard de la Liberté, Lille', responsable: 'Emma Dubois', tel: '03 20 15 30 45', agences: 3 },
+  { id: 1, nom: 'Agence Paris Centre', adresse: '15 rue de Rivoli, Paris', client: 'Alice Moreau', tel: '01 23 45 67 89', agences: 8 },
+  { id: 2, nom: 'Agence Lyon Part-Dieu', adresse: '45 cours Lafayette, Lyon', client: 'Bernard Blanc', tel: '04 78 90 12 34', agences: 5 },
+  { id: 3, nom: 'Agence Marseille Vieux-Port', adresse: '12 quai du Port, Marseille', client: 'Catherine Roux', tel: '04 91 23 45 67', agences: 6 },
+  { id: 4, nom: 'Agence Bordeaux Centre', adresse: '8 rue Sainte-Catherine, Bordeaux', client: 'David Lopez', tel: '05 56 78 90 12', agences: 4 },
+  { id: 5, nom: 'Agence Lille Grand Palais', adresse: '25 boulevard de la Liberté, Lille', client: 'Emma Dubois', tel: '03 20 15 30 45', agences: 3 },
 ];
 
 // Données des agences avec incidents
@@ -224,7 +224,7 @@ function Home() {
           <th>ID</th>
           <th>Nom de l'agence</th>
           <th>Adresse</th>
-          <th>Responsable</th>
+          <th>Client</th>
           <th>Téléphone</th>
           <th>Nombre d'agences</th>
         </tr>
@@ -235,7 +235,7 @@ function Home() {
             <td>{agence.id}</td>
             <td>{agence.nom}</td>
             <td>{agence.adresse}</td>
-            <td>{agence.responsable}</td>
+            <td>{agence.client}</td>
             <td>{agence.tel}</td>
             <td>{agence.agences}</td>
           </tr>

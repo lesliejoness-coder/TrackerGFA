@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "./components/login";
+import Login from "./components/Login.jsx";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Head from "./components/Dashboard/Head";

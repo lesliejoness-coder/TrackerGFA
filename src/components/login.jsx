@@ -18,9 +18,9 @@ const Login = () => {
     <div className="login-container">
       <div className="form-box login">
         <form action="" className="form" onSubmit={handleSubmit}>
-          <u>
-            <h1>Connexion</h1>
-          </u>
+          
+            <h1>TrackerGFA</h1>
+          
           <div className="input-box">
             <input type="email" placeholder="Email" required />
             <MdEmail className="icon" />
