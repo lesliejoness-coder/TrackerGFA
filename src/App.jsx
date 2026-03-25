@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Head from "./components/Dashboard/Head";
 import Sidebar from "./components/Dashboard/sidebar";
 import Home from "./components/Dashboard/Home";
+import AddUser from "./components/Dashboard/AddUser"; // ← AJOUTE
 
 function App() {
   return (
@@ -20,9 +21,19 @@ function App() {
           </div>
         }
       />
+      {/* ← AJOUTE cette route */}
+<Route
+        path="/Dashboard/add-user"
+        element={
+          <div className="grid-container">
+            <Head />
+            <Sidebar />
+            <AddUser />
+          </div>
+        }
+      />
     </Routes>
   );
 }
-
 
 export default App;

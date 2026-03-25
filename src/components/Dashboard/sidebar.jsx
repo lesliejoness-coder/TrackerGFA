@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import {
   BsCart3,              // Pour le logo principal
   BsGrid,                // Pour Dashboard
@@ -10,7 +11,7 @@ import {
 } from 'react-icons/bs';
 
 
-const sidebar = () => {
+const Sidebar = () => {
   return (
     <aside>
       <div className='sidebar-title'>
@@ -22,20 +23,15 @@ const sidebar = () => {
       </div>
 
       <ul className='sidebar-list'>
-        <li className='sidebar-list-item'>
-          <a href=''>
+<li className='sidebar-list-item'>
+          <Link to='/Dashboard'>
             <BsGrid className='icon' />Dashboard
-          </a>
+          </Link>
         </li>
         <li className='sidebar-list-item'>
-          <a href=''>
-            <BsPersonPlus className='icon' />Ajouter un utilisateur
-          </a>
-        </li>
-        <li className='sidebar-list-item'>
-          <a href=''>
-            <BsPersonBadge className='icon' />Ajouter un client
-          </a>
+          <Link to='/Dashboard/add-user'>
+  <BsPersonPlus className='icon' />Ajouter un utilisateur
+</Link>
         </li>
         <li className='sidebar-list-item'>
           <a href=''>
@@ -52,4 +48,4 @@ const sidebar = () => {
   )
 }
 
-export default sidebar
+export default Sidebar

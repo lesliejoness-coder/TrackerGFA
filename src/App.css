@@ -149,5 +149,26 @@ aside {
     gap: 10px;
   }
 }
-
+.add-user-wrap { max-width: 520px; margin: 2rem auto; background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; }
+.add-user-title { font-size: 20px; font-weight: 500; margin: 0 0 4px; }
+.add-user-sub { font-size: 13px; color: #6b7280;margin: 0 0 1.25rem; }
+.type-tabs { display: flex; gap: 8px; margin-bottom: 1.25rem; }
+.tab { padding: 6px 16px; border-radius: 8px; border: 1px solid #d1d5db; font-size: 13px; cursor: pointer; background: white; }
+.tab-client.active { background: #E6F1FB; border-color: #378ADD; color: #0C447C; font-weight: 500; }
+.tab-employe.active { background: #EAF3DE; border-color: #639922; color: #27500A; font-weight: 500; }
+.tab-admin.active { background: #EEEDFE; border-color: #7F77DD; color: #3C3489; font-weight: 500; }
+.section-label { font-size: 12px; font-weight: 500; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; margin: 1rem 0 8px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field { margin-bottom: 12px; }
+.field label { display: block; font-size: 13px; color: #6b7280; margin-bottom: 4px; }
+.field input, .field select { width: 100%; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
+.form-divider { border: none; border-top: 1px solid #e5e7eb; margin: 1rem 0; }
+.specific-block { border-radius: 8px; padding: 14px; }
+.block-client { background: #E6F1FB; border: 1px solid #85B7EB; }
+.block-employe { background: #EAF3DE; border: 1px solid #97C459; }
+.block-admin { background: #EEEDFE; border: 1px solid #AFA9EC; }
+.btn-submit { width: 100%; padding: 10px; border-radius: 8px; border: none; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 1rem; color: white; }
+.btn-client { background: #378ADD; }
+.btn-employe { background: #639922; }
+.btn-admin { background: #7F77DD; }
 

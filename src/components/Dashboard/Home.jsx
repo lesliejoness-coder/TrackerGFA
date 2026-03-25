@@ -47,11 +47,11 @@ const USERS_DATA = [
 
 // Données des clients
 const CLIENTS_DATA = [
-  { id: 1, nom: 'Société ABC', contact: 'Paul Martin', email: 'contact@abc.com', type: 'Entreprise', statut: 'Actif' },
-  { id: 2, nom: 'Jean Michel', contact: 'Jean Michel', email: 'jean.michel@email.com', type: 'Particulier', statut: 'Actif' },
-  { id: 3, nom: 'Entreprise XYZ', contact: 'Claire Dubois', email: 'claire@xyz.com', type: 'Entreprise', statut: 'Inactif' },
-  { id: 4, nom: 'Marie Curie', contact: 'Marie Curie', email: 'marie.curie@email.com', type: 'Particulier', statut: 'Actif' },
-  { id: 5, nom: 'Tech Solutions', contact: 'Thomas Petit', email: 'thomas@techsolutions.com', type: 'Entreprise', statut: 'Actif' },
+  { id: 1, nom: 'Société ABC', contact: 'Paul Martin', email: 'contact@abc.com', type: 'Entreprise' },
+  { id: 2, nom: 'Entreprise XYZ', contact: 'Claire Dubois', email: 'claire@xyz.com', type: 'Entreprise' },
+  { id: 3, nom: 'Tech Solutions', contact: 'Thomas Petit', email: 'thomas@techsolutions.com', type: 'Entreprise' },
+  { id: 4, nom: 'Global Corp', contact: 'Nadia Fokou', email: 'nadia@globalcorp.com', type: 'Entreprise' },
+  { id: 5, nom: 'Innov Group', contact: 'Marc Etoga', email: 'marc@innovgroup.com', type: 'Entreprise' },
 ];
 
 // Données des agences actives
@@ -65,9 +65,9 @@ const AGENCES_ACTIVES_DATA = [
 
 // Données des agences avec incidents
 const AGENCES_INCIDENTS_DATA = [
-  { id: 1, nom: 'Agence Nice', adresse: '5 avenue Jean Médecin, Nice', incident: 'Panne réseau', niveau: 'Critique', dateIncident: '2024-03-15' },
-  { id: 2, nom: 'Agence Toulouse', adresse: '32 rue d\'Alsace, Toulouse', incident: 'Problème électrique', niveau: 'Majeur', dateIncident: '2024-03-14' },
-  { id: 3, nom: 'Agence Strasbourg', adresse: '18 rue des Francs-Bourgeois, Strasbourg', incident: 'Fuite d\'eau', niveau: 'Mineur', dateIncident: '2024-03-13' },
+  { id: 1, nom: 'Agence Nice', adresse: '5 avenue Jean Médecin, Nice', incident: 'Panne réseau', niveau: 'Critique', statut: 'En cours', dateIncident: '2024-03-15' },
+  { id: 2, nom: 'Agence Toulouse', adresse: '32 rue d\'Alsace, Toulouse', incident: 'Problème électrique', niveau: 'Moyen', statut: 'En attente', dateIncident: '2024-03-14' },
+  { id: 3, nom: 'Agence Strasbourg', adresse: '18 rue des Francs-Bourgeois, Strasbourg', incident: 'Fuite d\'eau', niveau: 'Faible', statut: 'Résolu', dateIncident: '2024-03-13' },
 ];
 
 // Configuration des onglets
@@ -191,7 +191,6 @@ function Home() {
           <th>Contact</th>
           <th>Email</th>
           <th>Type</th>
-          <th>Statut</th>
         </tr>
       </thead>
       <tbody>
@@ -202,13 +201,8 @@ function Home() {
             <td>{client.contact}</td>
             <td>{client.email}</td>
             <td>
-              <span className={`badge type-${client.type.toLowerCase()}`}>
-                {client.type}
-              </span>
-            </td>
-            <td>
-              <span className={`badge status-${client.statut.toLowerCase()}`}>
-                {client.statut}
+              <span className="badge type-entreprise">
+                Entreprise
               </span>
             </td>
           </tr>
@@ -224,7 +218,7 @@ function Home() {
           <th>ID</th>
           <th>Nom de l'agence</th>
           <th>Adresse</th>
-          <th>Responsable</th>
+          <th>Client</th>
           <th>Téléphone</th>
           <th>Nombre d'agences</th>
         </tr>
@@ -253,7 +247,9 @@ function Home() {
           <th>Adresse</th>
           <th>Incident</th>
           <th>Niveau</th>
+          <th>Statut</th>
           <th>Date de l'incident</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -268,7 +264,26 @@ function Home() {
                 {agence.niveau}
               </span>
             </td>
+            <td>
+              <span className={`badge statut-${agence.statut.replace(' ', '-').toLowerCase()}`}>
+                {agence.statut}
+              </span>
+            </td>
             <td>{agence.dateIncident}</td>
+            <td>
+              <div className="dropdown-wrapper">
+                <button className="dropdown-btn">
+                  Actions ▾
+                </button>
+                <div className="dropdown-menu">
+                  <button className="dropdown-item item-encours">🔄 En cours</button>
+                  <button className="dropdown-item item-terminer">✅ Résolu</button>
+                  <button className="dropdown-item item-detail">🔍 Détail</button>
+                  <button className="dropdown-item item-affecter">👤 Affecter</button>
+                  <button className="dropdown-item item-probleme">⚠️ Problème</button>
+                </div>
+              </div>
+            </td>
           </tr>
         ))}
       </tbody>
@@ -644,15 +659,92 @@ function Home() {
           color: #721c24;
         }
 
-        .badge.niveau-majeur {
+        .badge.niveau-moyen {
           background: #fff3cd;
           color: #856404;
         }
 
-        .badge.niveau-mineur {
+        .badge.niveau-faible {
           background: #d1ecf1;
           color: #0c5460;
         }
+
+        .badge.statut-en-cours {
+          background: #cce5ff;
+          color: #004085;
+        }
+
+        .badge.statut-en-attente {
+          background: #fff3cd;
+          color: #856404;
+        }
+
+        .badge.statut-résolu {
+          background: #d4edda;
+          color: #155724;
+        }
+
+        /* Dropdown Actions */
+        .dropdown-wrapper {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-btn {
+          background: #4a6fa5;
+          color: white;
+          border: none;
+          padding: 6px 12px;
+          border-radius: 5px;
+          font-size: 13px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: background 0.2s;
+          white-space: nowrap;
+        }
+
+        .dropdown-btn:hover {
+          background: #3a5a8a;
+        }
+
+        .dropdown-wrapper:hover .dropdown-menu {
+          display: block;
+        }
+
+        .dropdown-menu {
+          display: none;
+          position: absolute;
+          right: 0;
+          top: 100%;
+          background: white;
+          border: 1px solid #dee2e6;
+          border-radius: 6px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          z-index: 100;
+          min-width: 150px;
+          overflow: hidden;
+        }
+
+        .dropdown-item {
+          display: block;
+          width: 100%;
+          padding: 8px 14px;
+          background: none;
+          border: none;
+          text-align: left;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.15s;
+          color: #333;
+          white-space: nowrap;
+        }
+
+        .dropdown-item:hover { background: #f0f4ff; }
+        .item-encours:hover  { color: #004085; }
+        .item-terminer:hover { color: #155724; }
+        .item-detail:hover   { color: #0c5460; }
+        .item-affecter:hover { color: #856404; }
+        .item-probleme:hover { color: #721c24; }
 
         /* Styles responsifs */
         @media (max-width: 768px) {
