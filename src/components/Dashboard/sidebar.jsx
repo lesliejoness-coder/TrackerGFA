@@ -1,55 +1,62 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 import {
-  BsCart3,              // Pour le logo principal
-  BsGrid,                // Pour Dashboard
-  BsPersonPlus,          // Pour Ajouter utilisateur
-  BsPersonBadge,         // Pour Ajouter client
-  BsBuilding,            // Pour Créer filiale
-  BsShop,                // Pour Créer agence
-  BsX                     // Pour l'icône de fermeture (X)
-} from 'react-icons/bs';
+  BsCart3, // Pour le logo principal
+  BsGrid, // Pour Dashboard
+  BsPersonPlus, // Pour Ajouter utilisateur
+  BsPersonBadge, // Pour Ajouter client
+  BsBuilding, // Pour Créer filiale
+  BsShop, // Pour Créer agence
+  BsX, // Pour l'icône de fermeture (X)
+} from "react-icons/bs";
 
-
-const sidebar = () => {
+const Sidebar = ({ collapsed, toggleSidebar }) => {
   return (
-    <aside>
-      <div className='sidebar-title'>
-        <div className='sidebar-brand'>
-          <BsCart3 className='menu-icon' /> DASHBOARD
+    <aside className={collapsed ? "collapsed" : ""}>
+      <div className="sidebar-title">
+        <div className="sidebar-brand">
+          <BsCart3 className="menu-icon" />{" "}
+          <span className={collapsed ? "hidden-text" : ""}>DASHBOARD</span>
         </div>
-        <span className='icon close_icon'><BsX />
+        <span className="icon close_icon" onClick={toggleSidebar}>
+          <BsX />
         </span>
       </div>
 
-      <ul className='sidebar-list'>
-        <li className='sidebar-list-item'>
-          <a href=''>
-            <BsGrid className='icon' />Dashboard
+      <ul className="sidebar-list">
+        <li className="sidebar-list-item">
+          <Link to="/Dashboard">
+            <BsGrid className="icon" />
+            <span className={collapsed ? "hidden-text" : ""}>Dashboard</span>
+          </Link>
+        </li>
+        <li className="sidebar-list-item">
+          <Link to="/Dashboard/add-user">
+            <BsPersonPlus className="icon" />
+            <span className={collapsed ? "hidden-text" : ""}>
+              Ajouter un utilisateur
+            </span>
+          </Link>
+        </li>
+        <li className="sidebar-list-item">
+          <a href="">
+            <BsBuilding className="icon" />
+            <span className={collapsed ? "hidden-text" : ""}>
+              Créer une filiale
+            </span>
           </a>
         </li>
-        <li className='sidebar-list-item'>
-          <a href=''>
-            <BsPersonPlus className='icon' />Ajouter un utilisateur
-          </a>
-        </li>
-        <li className='sidebar-list-item'>
-          <a href=''>
-            <BsPersonBadge className='icon' />Ajouter un client
-          </a>
-        </li>
-        <li className='sidebar-list-item'>
-          <a href=''>
-            <BsBuilding className='icon' />Créer une filiale
-          </a>
-        </li>
-        <li className='sidebar-list-item'>
-          <a href=''>
-            <BsShop className='icon' />Créer une agence
+        <li className="sidebar-list-item">
+          <a href="">
+            <BsShop className="icon" />
+            <span className={collapsed ? "hidden-text" : ""}>
+              Créer une agence
+            </span>
           </a>
         </li>
       </ul>
     </aside>
-  )
-}
+  );
+};
 
-export default sidebar
+export default Sidebar;

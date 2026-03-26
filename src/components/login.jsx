@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();
     // Add your authentication logic here
     // For now, redirect directly to Dashboard
-    navigate("/dashboard");
+navigate("/Dashboard");
   };
 
   return (
