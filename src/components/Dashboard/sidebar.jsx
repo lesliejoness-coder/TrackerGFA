@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {
-  BsCart3,              // Pour le logo principal
-  BsGrid,                // Pour Dashboard
-  BsPersonPlus,          // Pour Ajouter utilisateur
-  BsPersonBadge,         // Pour Ajouter client
-  BsBuilding,            // Pour Créer filiale
-  BsShop,                // Pour Créer agence
-  BsX                     // Pour l'icône de fermeture (X)
+  BsCart3,
+  BsGrid,
+  BsPersonPlus,
+  BsPersonBadge,
+  BsBuilding,
+  BsShop,
+  BsX
 } from 'react-icons/bs';
-
 
 const Sidebar = () => {
   return (
@@ -18,34 +17,33 @@ const Sidebar = () => {
         <div className='sidebar-brand'>
           <BsCart3 className='menu-icon' /> DASHBOARD
         </div>
-        <span className='icon close_icon'><BsX />
-        </span>
+        <span className='icon close_icon'><BsX /></span>
       </div>
 
       <ul className='sidebar-list'>
-<li className='sidebar-list-item'>
+        <li className='sidebar-list-item'>
           <Link to='/Dashboard'>
             <BsGrid className='icon' />Dashboard
           </Link>
         </li>
         <li className='sidebar-list-item'>
           <Link to='/Dashboard/add-user'>
-  <BsPersonPlus className='icon' />Ajouter un utilisateur
-</Link>
+            <BsPersonPlus className='icon' />Ajouter un utilisateur
+          </Link>
         </li>
         <li className='sidebar-list-item'>
-          <a href=''>
+          <Link to='/Dashboard/create-filiale'>
             <BsBuilding className='icon' />Créer une filiale
-          </a>
+          </Link>
         </li>
         <li className='sidebar-list-item'>
-          <a href=''>
+          <Link to='/Dashboard/create-agence'>
             <BsShop className='icon' />Créer une agence
-          </a>
+          </Link>
         </li>
       </ul>
     </aside>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
