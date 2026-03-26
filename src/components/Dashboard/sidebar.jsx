@@ -43,6 +43,11 @@ const Sidebar = () => {
             <BsShop className='icon' />Créer une agence
           </a>
         </li>
+        <li className='sidebar-list-item'>
+  <Link to='/Dashboard/employe'>
+    <BsPersonBadge className='icon' /> Dashboard Employé
+  </Link>
+</li>
       </ul>
     </aside>
   )

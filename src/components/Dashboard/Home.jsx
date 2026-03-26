@@ -9,6 +9,7 @@ import {
   BsPeopleFill,          // Pour les clients
   BsCheckCircle,         // Pour agences actives
   BsExclamationTriangle  // Pour agences avec incidents
+  
 } from 'react-icons/bs';
 import { PieChart, Pie, Cell, Sector, Tooltip, Legend } from 'recharts';
 
