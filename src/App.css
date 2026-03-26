@@ -44,6 +44,8 @@ body {
   transition: grid-template-columns 0.3s ease;
 
   overflow: hidden;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 /* ===================== HEADER ===================== */
@@ -52,7 +54,7 @@ body {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 30px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   background-color: #fff;
@@ -331,6 +333,7 @@ aside.collapsed .sidebar-list-item a {
     width: 100%;
     box-sizing: border-box;
     transition: all 0.3s ease;
+      
   }
 
   /* ===================== FORMULAIRE AJOUTER UTILISATEUR ===================== */

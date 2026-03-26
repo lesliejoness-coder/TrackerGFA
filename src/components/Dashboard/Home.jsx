@@ -608,7 +608,7 @@ function Home() {
           font-family:
             -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
             Ubuntu, sans-serif;
-          height: 400px;        /* hauteur fixe */
+          height: 500px;        /* hauteur fixe */
           overflow-y: auto;     /* scroll vertical automatique */
         }
 
