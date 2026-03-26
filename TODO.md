@@ -1,27 +1,10 @@
-# TrackerGFA Navigation Fix - TODO
+# TODO: Dashboard Expansion Fix
 
-## Plan: Fix dashboard navigation (path mismatches + broken sidebar links)
+## Approved Plan Steps:
 
+- [x] Step 1: Edit mon-app/src/App.css to fix .grid-container.collapsed grid-template-columns to '60px 1fr' and add smooth transitions to main content.
+- [ ] Step 2: Test toggle functionality (collapse/expand cross icon).
+- [ ] Step 3: Verify main dashboard interface (Home.jsx content) expands dynamically.
+- [ ] Step 4: Complete task.
 
-- Dashboard: `<a href=''>` → `<Link to='/Dashboard'>`
-- Ensure AddUser Link matches route: `/Dashboard/add-user`
-
-### [ ] Step 3: Fix login.jsx navigation
-- `navigate('/dashboard')` → `navigate('/Dashboard')`
-
-### [ ] Step 4: Test full flow
-**Run**: `npm run dev`
-
-Expected:
-1. Login → Dashboard ✓
-2. Sidebar "Ajouter un utilisateur" → AddUser ✓  
-3. Sidebar "Dashboard" → Back to dashboard ✓
-4. Browser back button → Dashboard reloads ✓
-
-### [ ] Step 5: Complete task
-
-### [ ] Step 5: Complete task
-- Update this TODO with ✓
-- attempt_completion
-
-**Current: Ready for edits**
+Current Progress: Step 1 completed.

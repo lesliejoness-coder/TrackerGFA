@@ -1,0 +1,285 @@
+/* Layout principal */
+.gfa-main {
+  grid-area: main;
+  background: #f0f4f8;
+  padding: 24px;
+  min-height: 100vh;
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header de page */
+.gfa-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.gfa-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a2940;
+  margin: 0 0 4px;
+}
+.gfa-breadcrumb {
+  font-size: 13px;
+  color: #6b7280;
+}
+.gfa-breadcrumb span {
+  color: #2196f3;
+  font-weight: 500;
+}
+
+/* Carte */
+.gfa-card {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 22px;
+  margin-bottom: 16px;
+}
+.gfa-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Grilles */
+.gfa-grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Champs */
+.gfa-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 6px;
+}
+.gfa-field input,
+.gfa-field select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #2d3748;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.gfa-field input:focus,
+.gfa-field select:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33,150,243,0.1);
+}
+.gfa-field input::placeholder { color: #a0aec0; }
+.req { color: #e53e3e; }
+
+/* Toggles */
+.gfa-toggles {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+  padding: 6px 0;
+}
+.gfa-toggle-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #4a5568;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+.gfa-toggle {
+  width: 44px;
+  height: 24px;
+  background: #cbd5e0;
+  border-radius: 12px;
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.gfa-toggle.on { background: #20c997; }
+.gfa-toggle::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: left 0.2s;
+}
+.gfa-toggle.on::after { left: 23px; }
+
+/* Section utilisateur */
+.gfa-user-box {
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+}
+.gfa-user-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a2940;
+  margin-bottom: 14px;
+}
+
+/* Boutons */
+.gfa-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+.gfa-btn-cancel {
+  padding: 9px 22px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  background: #fff;
+  font-size: 13px;
+  color: #4a5568;
+  cursor: pointer;
+  font-weight: 500;
+}
+.gfa-btn-cancel:hover { background: #f7fafc; }
+.gfa-btn-save {
+  padding: 9px 24px;
+  border-radius: 6px;
+  border: none;
+  background: #20c997;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+.gfa-btn-save:hover { background: #17a589; }
+
+/* Toolbar liste */
+.gfa-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+.gfa-search-wrap { flex: 1; max-width: 280px; }
+.gfa-search {
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #2d3748;
+  outline: none;
+  box-sizing: border-box;
+}
+.gfa-search:focus { border-color: #2196f3; }
+
+/* Tableau */
+.gfa-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.gfa-table thead tr {
+  background: #dbeafe;
+}
+.gfa-table th {
+  text-align: left;
+  padding: 11px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e40af;
+  border-bottom: 1px solid #bfdbfe;
+}
+.gfa-table td {
+  padding: 11px 14px;
+  color: #374151;
+  border-bottom: 1px solid #f0f4f8;
+}
+.gfa-table tbody tr:hover { background: #f8faff; }
+.gfa-link {
+  color: #2196f3;
+  font-weight: 500;
+  cursor: pointer;
+}
+.gfa-link:hover { text-decoration: underline; }
+.gfa-actions-cell { display: flex; gap: 8px; align-items: center; }
+.gfa-action-btn {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #4a5568;
+  background: #f0f4f8;
+  border: 1px solid #e2e8f0;
+  transition: background 0.15s;
+}
+.gfa-action-btn:hover { background: #e2e8f0; }
+.gfa-action-btn.red { color: #e53e3e; }
+
+/* Liste agences filiale */
+.gfa-agences-list {
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.gfa-agence-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #2d3748;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f4f8;
+  transition: background 0.1s;
+}
+.gfa-agence-item:last-child { border-bottom: none; }
+.gfa-agence-item:hover { background: #f8faff; }
+.gfa-agence-item.selected {
+  background: #dbeafe;
+  color: #1e40af;
+  font-weight: 500;
+}
+.gfa-agence-item input[type="checkbox"] { accent-color: #2196f3; }
+.gfa-count {
+  background: #20c997;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.gfa-agences-bullet {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 0;
+}
+.gfa-agences-bullet li {
+  font-size: 13px;
+  color: #374151;
+  padding: 2px 0;
+}
