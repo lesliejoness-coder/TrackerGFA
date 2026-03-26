@@ -1,17 +1,10 @@
-# Sidebar Toggle Fix - Dynamic Collapse
+# TODO: Dashboard Expansion Fix
 
-## Current Status
+## Approved Plan Steps:
 
-✅ Previous implementation steps complete (state, props, basic styles)
+- [x] Step 1: Edit mon-app/src/App.css to fix .grid-container.collapsed grid-template-columns to '60px 1fr' and add smooth transitions to main content.
+- [ ] Step 2: Test toggle functionality (collapse/expand cross icon).
+- [ ] Step 3: Verify main dashboard interface (Home.jsx content) expands dynamically.
+- [ ] Step 4: Complete task.
 
-## Remaining Steps from Plan:
-
-### 1. ✅ Edit App.jsx: Add dynamic `collapsed` class to grid-container [x]
-
-### 2. ✅ Enhance App.css: Add smooth transition to grid-container [x]
-
-### 3. [DOING] Test toggle behavior on /Dashboard and /add-user routes [ ]
-
-### 4. [PENDING] Update TODO with results and attempt_completion [ ]
-
-**Status:** Steps 1-2 complete. Ready for testing (step 3).
+Current Progress: Step 1 completed.

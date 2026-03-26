@@ -5,7 +5,9 @@ import { Routes, Route } from "react-router-dom";
 import Head from "./components/Dashboard/Head";
 import Sidebar from "./components/Dashboard/sidebar";
 import Home from "./components/Dashboard/Home";
-import AddUser from "./components/Dashboard/AddUser"; // ← AJOUTE
+import AddUser from "./components/Dashboard/AddUser";
+import CreateAgence from "./components/Dashboard/AddAgence";
+import CreateFiliale from "./components/Dashboard/AddFiliale";
 
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -29,7 +31,7 @@ function App() {
           </div>
         }
       />
-      {/* ← AJOUTE cette route */}
+
       <Route
         path="/Dashboard/add-user"
         element={
@@ -42,6 +44,36 @@ function App() {
               toggleSidebar={toggleSidebar}
             />
             <AddUser />
+          </div>
+        }
+      />
+      <Route
+        path="/Dashboard/create-agence"
+        element={
+          <div
+            className={`grid-container ${sidebarCollapsed ? "collapsed" : ""}`}
+          >
+            <Head toggleSidebar={toggleSidebar} />
+            <Sidebar
+              collapsed={sidebarCollapsed}
+              toggleSidebar={toggleSidebar}
+            />
+            <CreateAgence />
+          </div>
+        }
+      />
+      <Route
+        path="/Dashboard/create-filiale"
+        element={
+          <div
+            className={`grid-container ${sidebarCollapsed ? "collapsed" : ""}`}
+          >
+            <Head toggleSidebar={toggleSidebar} />
+            <Sidebar
+              collapsed={sidebarCollapsed}
+              toggleSidebar={toggleSidebar}
+            />
+            <CreateFiliale />
           </div>
         }
       />
