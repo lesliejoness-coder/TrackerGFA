@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import {
-  BsPersonPlus, // Pour Ajouter utilisateur
-  BsPersonBadge, // Pour Ajouter client
-  BsBuilding, // Pour Créer filiale
-  BsShop, // Pour Créer agence
-  BsXCircleFill, // Pour l'icône de fermeture (X) en rouge
-  BsPeople, // Pour les utilisateurs
-  BsPeopleFill, // Pour les clients
-  BsCheckCircle, // Pour agences actives
-  BsExclamationTriangle, // Pour agences avec incidents
-} from "react-icons/bs";
-import { PieChart, Pie, Cell, Sector, Tooltip, Legend } from "recharts";
+  BsPersonPlus,          // Pour Ajouter utilisateur
+  BsPersonBadge,         // Pour Ajouter client
+  BsBuilding,            // Pour Créer filiale
+  BsShop,                // Pour Créer agence
+  BsXCircleFill,         // Pour l'icône de fermeture (X) en rouge
+  BsPeople,              // Pour les utilisateurs
+  BsPeopleFill,          // Pour les clients
+  BsCheckCircle,         // Pour agences actives
+  BsExclamationTriangle  // Pour agences avec incidents
+  
+} from 'react-icons/bs';
+import { PieChart, Pie, Cell, Sector, Tooltip, Legend } from 'recharts';
+
+  
 
 // ============= DONNÉES STATIQUES =============
 // Données pour le graphique

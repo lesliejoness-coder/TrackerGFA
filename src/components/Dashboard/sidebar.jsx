@@ -7,6 +7,7 @@ import {
   BsBuilding,
   BsShop,
   BsX,
+  BsPersonBadge,
 } from "react-icons/bs";
 
 const Sidebar = ({ collapsed, toggleSidebar }) => {
@@ -22,7 +23,16 @@ const Sidebar = ({ collapsed, toggleSidebar }) => {
       label: "Créer une filiale",
       to: "/Dashboard/create-filiale",
     },
-    { icon: BsShop, label: "Créer une agence", to: "/Dashboard/create-agence" },
+    {
+      icon: BsShop,
+      label: "Créer une agence",
+      to: "/Dashboard/create-agence",
+    },
+    {
+      icon: BsPersonBadge,
+      label: "Dashboard Employé",
+      to: "/Dashboard/employe",
+    },
   ];
 
   return (
@@ -36,6 +46,7 @@ const Sidebar = ({ collapsed, toggleSidebar }) => {
           <BsX />
         </span>
       </div>
+
       <ul className="sidebar-list">
         {menuItems.map(({ icon: Icon, label, to }) => (
           <li key={to} className="sidebar-list-item">
