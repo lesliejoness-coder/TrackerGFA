@@ -1,0 +1,1 @@
+import{j as e}from"./index-SMWPUvNw.js";const t=()=>e.jsxs("div",{className:"bg-white p-4 rounded-xl shadow w-full lg:w-1/3",children:[e.jsx("h3",{className:"font-semibold mb-2",children:"Types de problèmes"}),e.jsx("div",{className:"h-40 flex items-center justify-center text-gray-400",children:"Chart ici (Chart.js ou Recharts)"})]});export{t as default};
