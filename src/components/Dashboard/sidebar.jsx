@@ -1,63 +1,34 @@
+// components/Sidebar.jsx
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  BsCart3,
-  BsGrid,
-  BsPersonPlus,
-  BsBuilding,
-  BsShop,
-  BsX,
-  BsPersonBadge,
-} from "react-icons/bs";
+import Dropdown from "./Dropdown";
 
-const Sidebar = ({ collapsed, toggleSidebar }) => {
-  const menuItems = [
-    { icon: BsGrid, label: "Dashboard", to: "/Dashboard" },
-    {
-      icon: BsPersonPlus,
-      label: "Ajouter un utilisateur",
-      to: "/Dashboard/add-user",
-    },
-    {
-      icon: BsBuilding,
-      label: "Créer une filiale",
-      to: "/Dashboard/create-filiale",
-    },
-    {
-      icon: BsShop,
-      label: "Créer une agence",
-      to: "/Dashboard/create-agence",
-    },
-    {
-      icon: BsPersonBadge,
-      label: "Dashboard Employé",
-      to: "/Dashboard/employe",
-    },
-  ];
-
+const Sidebar = () => {
   return (
-    <aside className={collapsed ? "collapsed" : ""}>
-      <div className="sidebar-title">
-        <div className="sidebar-brand">
-          <BsCart3 className="menu-icon" />
-          <span className={collapsed ? "hidden-text" : ""}>DASHBOARD</span>
-        </div>
-        <span className="icon close_icon" onClick={toggleSidebar}>
-          <BsX />
-        </span>
-      </div>
+    <div className="
+      h-screen bg-blue-900 text-white 
+      w-64 
+      hidden md:block   
+    ">
+      <h1 className="text-xl font-bold p-4">GFA</h1>
 
-      <ul className="sidebar-list">
-        {menuItems.map(({ icon: Icon, label, to }) => (
-          <li key={to} className="sidebar-list-item">
-            <Link to={to}>
-              <Icon className="icon" />
-              <span className={collapsed ? "hidden-text" : ""}>{label}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </aside>
+      <nav className="flex flex-col gap-2">
+        <p className="px-4 py-2 hover:bg-gray-700">Tableau de bord</p>
+
+        <Dropdown
+          title="Gestion des groupes"
+          items={["Filiales", "Agences"]}
+        />
+
+        <Dropdown
+          title="Utilisateurs"
+          items={["Utilisateur", "Rôle"]}
+        />
+
+        <p className="px-4 py-2 hover:bg-gray-700">Suivi des agences</p>
+        <p className="px-4 py-2 hover:bg-gray-700">Rapports</p>
+        <p className="px-4 py-2 hover:bg-gray-700">Paramètres</p>
+      </nav>
+    </div>
   );
 };
 

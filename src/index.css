@@ -13,3 +13,6 @@ body {
   min-height: 100vh;
   background-image: url("./assets/background.jpeg") no-repeat;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
